@@ -1,0 +1,205 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap");
+:root {
+  --Strong-cyan: hsl(172, 67%, 45%);
+  --Very-dark-cyan: hsl(183, 100%, 15%);
+  --Dark-grayish-cyan: hsl(186, 14%, 43%);
+  --Grayish-cyan: hsl(184, 14%, 56%);
+  --Light-grayish-cyan: hsl(185, 41%, 84%);
+  --Very-light-grayish-cyan: hsl(189, 41%, 97%);
+  --White: hsl(0, 0%, 100%);
+  --ff-primary: "";
+  --fw-400: 500;
+  --fw-700: 600;
+  --fs-300: 0.6875rem;
+  --fs-400: 0.8125rem;
+  --fs-500: 1.25rem;
+}
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul,
+ol {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  -webkit-text-decoration-skip: ink;
+          text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+  *,
+*::before,
+*::after {
+    -webkit-animation-duration: 0.01ms !important;
+            animation-duration: 0.01ms !important;
+    -webkit-animation-iteration-count: 1 !important;
+            animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+h1,
+h2,
+h3 {
+  font-weight: var(--fw-700);
+}
+
+body {
+  min-height: 100vh;
+  padding: 5rem;
+  font-size: 24px;
+  font-family: "Space Mono", monospace;
+  font-weight: var(--fw-400);
+  overflow: hidden;
+  background-color: var(--Light-grayish-cyan);
+}
+
+.name {
+  width: 300px;
+  margin: 3rem auto;
+  text-align: center;
+  letter-spacing: 2rem;
+  word-wrap: break-word;
+}
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+  background-color: var(--White);
+  border-radius: 20px;
+  padding: 3rem 2rem;
+  display: flex;
+  gap: 3rem;
+}
+.container input {
+  text-align: end;
+  border: none;
+}
+.container button {
+  cursor: pointer;
+}
+.container .calc-input {
+  width: 50%;
+}
+.container .calc-input h3 {
+  margin-bottom: 1rem;
+}
+.container .calc-input input {
+  width: 100%;
+  padding-inline: 0.5rem;
+}
+.container .calc-input input:focus {
+  border-color: var(--Light-grayish-cyan);
+  border-radius: 10px;
+}
+.container .calc-input .input-bill {
+  margin-bottom: 2rem;
+}
+.container .calc-input .input-bill input {
+  background-image: url(/images/icon-dollar.svg);
+  background-repeat: no-repeat;
+  background-size: 20px;
+  background-position: 10px center;
+}
+.container .calc-input .input-tip {
+  margin: 2rem 0;
+}
+.container .calc-input .input-tip .tip-selector {
+  display: flex;
+  justify-content: space-between;
+  row-gap: 1rem;
+  flex-wrap: wrap;
+}
+.container .calc-input .input-tip .tip-selector button {
+  width: 30%;
+  background-color: var(--Very-dark-cyan);
+  border: none;
+  border-radius: 10px;
+  color: var(--White);
+  padding: 0.5rem;
+}
+.container .calc-input .input-tip .tip-selector input {
+  width: 30%;
+  text-align: center;
+}
+.container .calc-input .input-people {
+  margin-top: 2rem;
+}
+.container .calc-input .input-people input {
+  width: 100%;
+  background-image: url(/images/icon-person.svg);
+  background-repeat: no-repeat;
+  background-size: 20px;
+  background-position: 10px center;
+}
+.container .calc-output {
+  background-color: var(--Very-dark-cyan);
+  padding: 3rem;
+  border-radius: 20px;
+  width: 50%;
+}
+.container .calc-output button {
+  margin-inline: auto;
+  margin-top: 9rem;
+}
+.container .calc-output > * {
+  display: flex;
+  justify-content: space-between;
+}
+
+footer {
+  margin-top: 3rem;
+}/*# sourceMappingURL=style.css.map */
