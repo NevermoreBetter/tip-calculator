@@ -126,7 +126,8 @@ body {
 }
 .container input {
   text-align: end;
-  border: none;
+  border: 3px solid rgb(255, 255, 255);
+  background-color: var(--Very-light-grayish-cyan);
 }
 .container button {
   cursor: pointer;
@@ -134,19 +135,22 @@ body {
 .container .calc-input {
   width: 50%;
 }
-.container .calc-input h3 {
-  margin-bottom: 1rem;
-}
 .container .calc-input input {
   width: 100%;
-  padding-inline: 0.5rem;
+  padding-block: 0.5rem;
+  padding-inline: 1.5rem;
 }
 .container .calc-input input:focus {
-  border-color: var(--Light-grayish-cyan);
+  border: 3px solid #555;
   border-radius: 10px;
 }
 .container .calc-input .input-bill {
   margin-bottom: 2rem;
+}
+.container .calc-input .input-bill h3 {
+  margin-bottom: 1rem;
+  display: inline;
+  float: left;
 }
 .container .calc-input .input-bill input {
   background-image: url(/images/icon-dollar.svg);
@@ -171,6 +175,10 @@ body {
   color: var(--White);
   padding: 0.5rem;
 }
+.container .calc-input .input-tip .tip-selector button:hover {
+  background-color: var(--Light-grayish-cyan);
+  color: var(--Very-dark-cyan);
+}
 .container .calc-input .input-tip .tip-selector input {
   width: 30%;
   text-align: center;
@@ -178,12 +186,25 @@ body {
 .container .calc-input .input-people {
   margin-top: 2rem;
 }
+.container .calc-input .input-people h3 {
+  margin-bottom: 1rem;
+  display: inline;
+  float: left;
+}
 .container .calc-input .input-people input {
   width: 100%;
   background-image: url(/images/icon-person.svg);
   background-repeat: no-repeat;
   background-size: 20px;
   background-position: 10px center;
+  padding-block: 0.5rem;
+  padding-inline: 1.5rem;
+}
+.container .calc-input .error {
+  display: inline !important;
+  float: right !important;
+  color: red !important;
+  visibility: hidden;
 }
 .container .calc-output {
   background-color: var(--Very-dark-cyan);
@@ -191,13 +212,47 @@ body {
   border-radius: 20px;
   width: 50%;
 }
+.container .calc-output h3 {
+  color: var(--White);
+}
 .container .calc-output button {
   margin-inline: auto;
   margin-top: 9rem;
+  width: 100%;
+  justify-content: center;
+  border: none;
+  border-radius: 5px;
+  background-color: var(--Dark-grayish-cyan);
+  text-transform: uppercase;
+  color: var(--Very-dark-cyan);
+}
+.container .calc-output button:hover {
+  background-color: var(--Light-grayish-cyan);
 }
 .container .calc-output > * {
   display: flex;
   justify-content: space-between;
+}
+.container .calc-output > * p {
+  color: var(--Grayish-cyan);
+}
+.container .calc-output > * .tip-result,
+.container .calc-output > * .people-result {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+.container .calc-output > * .tip-result .dollar,
+.container .calc-output > * .people-result .dollar {
+  fill: var(--Strong-cyan);
+}
+.container .calc-output > * .tip-result p,
+.container .calc-output > * .people-result p {
+  color: var(--Strong-cyan);
+  font-size: 50px;
+}
+.container .calc-output .output-people {
+  margin-top: 3rem;
 }
 
 footer {

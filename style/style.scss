@@ -128,7 +128,8 @@ body {
   gap: 3rem;
   input {
     text-align: end;
-    border: none;
+    border: 3px solid rgb(255, 255, 255);
+    background-color: var(--Very-light-grayish-cyan);
   }
 
   button {
@@ -137,22 +138,24 @@ body {
 
   .calc-input {
     width: 50%;
-    h3 {
-      margin-bottom: 1rem;
-    }
 
     input {
       width: 100%;
-      padding-inline: 0.5rem;
+      padding-block: 0.5rem;
+      padding-inline: 1.5rem;
       &:focus {
-        border-color: var(--Light-grayish-cyan);
+        border: 3px solid #555;
         border-radius: 10px;
       }
     }
 
     .input-bill {
       margin-bottom: 2rem;
-
+      h3 {
+        margin-bottom: 1rem;
+        display: inline;
+        float: left;
+      }
       input {
         background-image: url(/images/icon-dollar.svg);
         background-repeat: no-repeat;
@@ -175,6 +178,11 @@ body {
           border-radius: 10px;
           color: var(--White);
           padding: 0.5rem;
+
+          &:hover {
+            background-color: var(--Light-grayish-cyan);
+            color: var(--Very-dark-cyan);
+          }
         }
         input {
           width: 30%;
@@ -186,13 +194,27 @@ body {
 
     .input-people {
       margin-top: 2rem;
+      h3 {
+        margin-bottom: 1rem;
+        display: inline;
+        float: left;
+      }
       input {
         width: 100%;
         background-image: url(/images/icon-person.svg);
         background-repeat: no-repeat;
         background-size: 20px;
         background-position: 10px center;
+        padding-block: 0.5rem;
+        padding-inline: 1.5rem;
       }
+    }
+
+    .error {
+      display: inline !important;
+      float: right !important;
+      color: red !important;
+      visibility: hidden;
     }
   }
 
@@ -201,14 +223,49 @@ body {
     padding: 3rem;
     border-radius: 20px;
     width: 50%;
-
+    h3 {
+      color: var(--White);
+    }
     button {
       margin-inline: auto;
       margin-top: 9rem;
+      width: 100%;
+      justify-content: center;
+      border: none;
+      border-radius: 5px;
+      background-color: var(--Dark-grayish-cyan);
+      text-transform: uppercase;
+      color: var(--Very-dark-cyan);
+
+      &:hover {
+        background-color: var(--Light-grayish-cyan);
+      }
     }
+
     & > * {
       display: flex;
       justify-content: space-between;
+      p {
+        color: var(--Grayish-cyan);
+      }
+
+      .tip-result,
+      .people-result {
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+        .dollar {
+          fill: var(--Strong-cyan);
+        }
+        p {
+          color: var(--Strong-cyan);
+          font-size: 50px;
+        }
+      }
+    }
+
+    .output-people {
+      margin-top: 3rem;
     }
   }
 }
