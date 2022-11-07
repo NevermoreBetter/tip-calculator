@@ -8,15 +8,16 @@ const tipResult = document.getElementById("tip-result-num");
 const checkAmount = () => {
   if (Number(sum.value) === 0) {
     sum.style.borderColor = "red";
+    sum.style.borderRadius = "10px";
     sumError.style.visibility = "visible";
-  }
-  if (Number(people.value) === 0) {
+  } else if (Number(people.value) === 0) {
     people.style.borderColor = "red";
+    sum.style.borderRadius = "10px";
     pplError.style.visibility = "visible";
   }
 };
 
-function calculate(button) {
+function totalTip(button) {
   const five = document.getElementById("5");
   const ten = document.getElementById("10");
   const fifteen = document.getElementById("15");
@@ -24,7 +25,7 @@ function calculate(button) {
   const fifty = document.getElementById("50");
 
   let result = 0;
-  checkAmount;
+  checkAmount();
   switch (Number(button.target.value)) {
     case 5:
       result = Number(sum.value) * (Number(five.value) / 100);
@@ -49,6 +50,12 @@ function calculate(button) {
   console.log(result);
   return result;
 }
+
+//---------------------------------------------------------------- totaTip/person--------------------------------------------------------//
+function tipPerPerson() {}
+
+//---------------------------------------------------------------- tipPerPerson+bill--------------------------------------------------------//
+function totalPerPerson() {}
 
 buttons.forEach((element) => {
   element.addEventListener("click", calculate);
