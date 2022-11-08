@@ -103,13 +103,16 @@ body {
   font-size: 24px;
   font-family: "Space Mono", monospace;
   font-weight: var(--fw-400);
-  overflow: hidden;
   background-color: var(--Light-grayish-cyan);
+}
+body h3 {
+  font-size: 20px;
+  margin-bottom: 1rem;
 }
 
 .name {
   width: 300px;
-  margin: 3rem auto;
+  margin: 1rem auto;
   text-align: center;
   letter-spacing: 2rem;
   word-wrap: break-word;
@@ -147,8 +150,12 @@ body {
 .container .calc-input .input-bill {
   margin-bottom: 2rem;
 }
+.container .calc-input .input-bill .error {
+  display: none;
+  float: right;
+  color: red;
+}
 .container .calc-input .input-bill h3 {
-  margin-bottom: 1rem;
   display: inline;
   float: left;
 }
@@ -157,6 +164,10 @@ body {
   background-repeat: no-repeat;
   background-size: 20px;
   background-position: 10px center;
+  border: none;
+}
+.container .calc-input .input-bill input:focus {
+  outline: 1px solid hsl(172deg, 67%, 45%);
 }
 .container .calc-input .input-tip {
   margin: 2rem 0;
@@ -186,8 +197,12 @@ body {
 .container .calc-input .input-people {
   margin-top: 2rem;
 }
+.container .calc-input .input-people .error {
+  display: none;
+  float: right;
+  color: red;
+}
 .container .calc-input .input-people h3 {
-  margin-bottom: 1rem;
   display: inline;
   float: left;
 }
@@ -199,12 +214,10 @@ body {
   background-position: 10px center;
   padding-block: 0.5rem;
   padding-inline: 1.5rem;
+  border: none;
 }
-.container .calc-input .error {
-  display: inline !important;
-  float: right !important;
-  color: red !important;
-  visibility: hidden;
+.container .calc-input .input-people input:focus {
+  outline: 1px solid hsl(172deg, 67%, 45%);
 }
 .container .calc-output {
   background-color: var(--Very-dark-cyan);
@@ -257,4 +270,35 @@ body {
 
 footer {
   margin-top: 3rem;
+}
+
+@media screen and (max-width: 1210px) {
+  #sum-head,
+#people-head {
+    display: block;
+    width: 100%;
+  }
+  #sum-err,
+#ppl-err {
+    float: left !important;
+  }
+}
+@media screen and (max-width: 1080px) {
+  body {
+    padding: 0;
+  }
+  .container {
+    display: block;
+    width: 100%;
+  }
+  .container .calc-input {
+    width: 100%;
+    margin-bottom: 2rem;
+  }
+  .container .calc-output {
+    width: 100%;
+  }
+  .container .calc-output button {
+    margin-top: 2rem;
+  }
 }/*# sourceMappingURL=style.css.map */
